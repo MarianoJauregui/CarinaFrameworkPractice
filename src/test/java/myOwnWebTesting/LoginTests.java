@@ -29,7 +29,7 @@ public class LoginTests implements IAbstractTest {
         LoginPage loginPage = homePage.clickFormAuthentication();
         loginPage.setUserAndPassword("tomsmith", "SuperSecretPassword!");
         SecureAreaPage secureAreaPage = loginPage.clickLoginButton();
-        Assert.assertTrue(secureAreaPage.getAlertText().contains("You logged into a secure area!")
-                , "Alert text is incorrect.");
+        Assert.assertTrue(secureAreaPage.getStatusAlertText().contains("You logged into a secure area!"),
+                "Text is not correct.");
     }
 }

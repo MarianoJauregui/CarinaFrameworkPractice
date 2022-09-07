@@ -1,4 +1,4 @@
-package com.qaprosoft.carina.demo.gui.personalWebTesting.pages;
+package personalWebTestingMJ.pages;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractPage;
