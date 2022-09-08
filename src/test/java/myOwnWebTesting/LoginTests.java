@@ -5,24 +5,11 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import personalWebTestingMJ.pages.HerokuAppHomePage;
 import personalWebTestingMJ.pages.LoginPage;
 import personalWebTestingMJ.pages.SecureAreaPage;
 
-public class LoginTests implements IAbstractTest {
+public class LoginTests extends HerokuAppBaseTests implements IAbstractTest {
 
-    protected HerokuAppHomePage homePage = new HerokuAppHomePage(getDriver());
-
-    @BeforeClass
-    public void setUp(){
-        homePage.open();
-        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-    }
-
-    @AfterClass
-    public void tearDown(){
-        homePage.quitDriver();
-    }
 
     @Test
     public void testSuccessLogin(){
@@ -31,5 +18,7 @@ public class LoginTests implements IAbstractTest {
         SecureAreaPage secureAreaPage = loginPage.clickLoginButton();
         Assert.assertTrue(secureAreaPage.getStatusAlertText().contains("You logged into a secure area!"),
                 "Text is not correct.");
+
+
     }
 }

@@ -2,6 +2,7 @@ package personalWebTestingMJ.pages;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,9 +16,12 @@ public class HerokuAppHomePage extends AbstractPage {
     private ExtendedWebElement formAuthenticationLink;
 
 
+    public void clickLink(String linkText){
+        driver.findElement(By.linkText(linkText)).click();
+    }
 
     public LoginPage clickFormAuthentication(){
-        formAuthenticationLink.click();
+        clickLink("Form Authentication");
         return new LoginPage(driver);
     }
 
