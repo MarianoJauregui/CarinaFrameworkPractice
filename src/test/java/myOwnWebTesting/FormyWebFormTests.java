@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import personalWebTestingMJ.pages.FormyProjectWebFormPage;
 
 public class FormyWebFormTests implements IAbstractTest {
-    protected FormyProjectWebFormPage exercisePage = new FormyProjectWebFormPage(getDriver());
+    private final FormyProjectWebFormPage exercisePage = new FormyProjectWebFormPage(getDriver());
 
     @BeforeClass
     public void setUp(){
